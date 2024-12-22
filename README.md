@@ -378,11 +378,12 @@ console.log( await result ) // Outputs: '1-2-end'
 // src/middleware.ts
 
 import { NextMiddleware, NextResponse } from 'next/server'
+import Chain from '@alessiofrittoli/chain-functions'
 import type { ChainFactory, ChainLink, LastChainLink } from '@alessiofrittoli/chain-functions/types'
 
-type Middleware = ChainLink<NextMiddleware>
-type LastMiddleware = () => NextResponse<unknown>
-type MiddlewareFactory = ChainFactory<NextMiddleware, LastMiddleware>
+type Middleware			= ChainLink<NextMiddleware>
+type LastMiddleware		= () => NextResponse<unknown>
+type MiddlewareFactory	= ChainFactory<NextMiddleware, LastMiddleware>
 
 const middleware1: Middleware = next => (
 	async ( request, event ) => {
