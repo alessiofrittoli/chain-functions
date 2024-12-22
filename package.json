@@ -48,7 +48,8 @@
 		"test:coverage": "concurrently --prefix none --kill-others \"pnpm jest --watchAll --verbose --coverage\" \"pnpm test:serve-coverage\"",
 		"test:coverage:jsdom": "JSDOM=true pnpm test:coverage",
 		"test:jest": "pnpm test jest.test.ts",
-		"test:jest:jsdom": "JSDOM=true pnpm test:jest"
+		"test:jest:jsdom": "JSDOM=true pnpm test:jest",
+		"test:chain": "pnpm test chain.test.ts"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.17.0",
