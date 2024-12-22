@@ -27,9 +27,18 @@
 	"files": [
 		"dist"
 	],
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		},
+		"./types": {
+			"types": "./dist/types.d.ts"
+		}
+	},
 	"sideEffects": false,
 	"scripts": {
-		"build": "pnpm lint && pnpm test:ci && pnpm test:ci:jsdom && tsup",
+		"build": "pnpm lint && pnpm test:ci && tsup",
 		"lint": "eslint",
 		"test": "jest --watchAll --verbose",
 		"test:jsdom": "JSDOM=true pnpm test",
