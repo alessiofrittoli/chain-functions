@@ -61,6 +61,20 @@ describe( 'Chain', () => {
 	} )
 
 
+	it( 'allows last chain link to have a custom return type', () => {
+		type LastChainFunction = () => boolean
+
+		const test1: ChainLink<ChainFunction> = next => () => `1-${ next() }`
+		const test2: ChainLink<ChainFunction> = next => () => `2-${ next() }`
+		const test3: LastChainLink<LastChainFunction> = () => () => true
+
+		const chain: ChainFactory<ChainFunction, LastChainFunction> = [ test1, test2, test3 ]
+		const result = Chain.functions( chain )()
+
+		expect( result ).toBe( '1-2-true' )
+	} )
+
+
 	it( 'allows chain functions to interrupt the chain', () => {
 
 		type ChainFunctionProps = {
