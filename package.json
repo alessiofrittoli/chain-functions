@@ -1,6 +1,6 @@
 {
 	"name": "@alessiofrittoli/chain-functions",
-	"version": "0.1.0",
+	"version": "0.1.0-alpha.1",
 	"description": "Functions chaining made easy",
 	"author": {
 		"name": "Alessio Frittoli",
