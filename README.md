@@ -1,6 +1,6 @@
 # Chain Functions ⛓️
 
-Version 1.0.0
+Version 1.0.1
 
 ## Functions chaining made easy
 
