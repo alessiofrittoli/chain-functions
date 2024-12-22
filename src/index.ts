@@ -23,7 +23,7 @@ class Chain
 	 */
 	static functions<
 		T extends ChainFunction = ChainFunction,
-		U extends T = T
+		U extends ChainFunction = T
 	>(
 		chain: ChainFactory<T, U>,
 		index: number = 0,
@@ -60,7 +60,7 @@ class Chain
 	 */
 	private static isLast<
 		T extends ChainFunction = ChainFunction,
-		U extends T = T
+		U extends ChainFunction = T
 	>(
 		chain	: ChainFactory<T, U>,
 		fn?		: ChainLink<T> | LastChainLink<U>,

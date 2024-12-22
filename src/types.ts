@@ -38,4 +38,4 @@ export type LastChainLink<T extends ChainFunction = ChainFunction> = () => T
  * 
  * By default, `U` is the same as `T`, but it can be specified explicitly if the last function has a different type.
  */
-export type ChainFactory<T extends ChainFunction = ChainFunction, U extends T = T> = [ ...ChainLink<T>[], LastChainLink<U> ]
+export type ChainFactory<T extends ChainFunction = ChainFunction, U extends ChainFunction = T> = [ ...ChainLink<T>[], LastChainLink<U> ]
