@@ -21,7 +21,7 @@
 		"type": "git",
 		"url": "git+https://github.com/alessiofrittoli/chain-functions.git"
 	},
-	"main": "./dist/index.cjs",
+	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
 	"files": [
@@ -29,8 +29,9 @@
 	],
 	"exports": {
 		".": {
+			"types": "./dist/index.d.ts",
 			"import": "./dist/index.mjs",
-			"require": "./dist/index.cjs"
+			"require": "./dist/index.js"
 		},
 		"./types": {
 			"types": "./dist/types.d.ts"
