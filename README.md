@@ -2,6 +2,8 @@
 
 Version 1.0.1
 
+[![Coverage Status](https://coveralls.io/repos/github/alessiofrittoli/chain-functions/badge.svg)](https://coveralls.io/github/alessiofrittoli/chain-functions) [![Dependencies](https://img.shields.io/librariesio/release/npm/%40alessiofrittoli%2Fchain-functions)](https://libraries.io/npm/%40alessiofrittoli%2Fchain-functions)
+
 ## Functions chaining made easy
 
 The `Chain` class provides a utility for managing and executing chains of functions. Each function in the chain can optionally invoke the next function, enabling a flexible and composable flow of execution. This is particularly useful for scenarios such as middleware processing, data transformations, or handling asynchronous operations in a structured manner.
@@ -478,7 +480,7 @@ Run all the defined test suites by running the following:
 
 ```bash
 # Run tests and watch file changes.
-pnpm test
+pnpm test:watch
 
 # Run tests and watch file changes with jest-environment-jsdom.
 pnpm test:jsdom
@@ -504,7 +506,7 @@ An HTTP server is then started to serve coverage files from `./coverage` folder.
 ⚠️ You may see a blank page the first time you run this command. Simply refresh the browser to see the updates.
 
 ```bash
-pnpm test:coverage
+test:coverage:serve
 ```
 
 ---

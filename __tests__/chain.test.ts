@@ -1,5 +1,5 @@
-import Chain from '@/index';
-import type { ChainFactory, ChainLink, LastChainLink } from '@/types';
+import { Chain } from '@/index'
+import type { ChainFactory, ChainLink, LastChainLink } from '@/types'
 
 type ChainFunction = () => string
 
@@ -46,18 +46,33 @@ describe( 'Chain', () => {
 			.toThrow( 'Invalid chain: no function found at index 0' )
 	} )
 
+	describe( 'Chain.isLast()', () => {
+		it( 'checks index `0` if no one is provided', () => {
+			const test1: ChainLink<() => void> = ( next ) => () => next()
+			const test2: LastChainLink<ChainFunction> = () => () => 'end'
+	
+			const func1	= jest.fn( test1 )
+			const func2	= jest.fn( test2 )
+	
+			const chain: ChainFactory<() => void, ChainFunction> = [ func1, func2 ]
+			const isLast = Chain[ 'isLast' ]( chain, func1 )
+	
+			expect( isLast ).toBe( false )
+		} )
 
-	it( 'identifies the last function in the chain', () => {
-		const test1: ChainLink<() => void> = ( next ) => () => next()
-		const test2: LastChainLink<ChainFunction> = () => () => 'end'
 
-		const func1	= jest.fn( test1 )
-		const func2	= jest.fn( test2 )
-
-		const chain: ChainFactory<() => void, ChainFunction> = [ func1, func2 ]
-		const isLast = Chain[ 'isLast' ]( chain, func2, 1 )
-
-		expect( isLast ).toBe( true )
+		it( 'identifies the last function in the chain', () => {
+			const test1: ChainLink<() => void> = ( next ) => () => next()
+			const test2: LastChainLink<ChainFunction> = () => () => 'end'
+	
+			const func1	= jest.fn( test1 )
+			const func2	= jest.fn( test2 )
+	
+			const chain: ChainFactory<() => void, ChainFunction> = [ func1, func2 ]
+			const isLast = Chain[ 'isLast' ]( chain, func2, 1 )
+	
+			expect( isLast ).toBe( true )
+		} )
 	} )
 
 
