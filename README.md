@@ -1,6 +1,6 @@
 # Chain Functions ⛓️
 
-Version 1.0.1
+Version 2.0.0
 
 [![Coverage Status](https://coveralls.io/repos/github/alessiofrittoli/chain-functions/badge.svg)](https://coveralls.io/github/alessiofrittoli/chain-functions) [![Dependencies](https://img.shields.io/librariesio/release/npm/%40alessiofrittoli%2Fchain-functions)](https://libraries.io/npm/%40alessiofrittoli%2Fchain-functions)
 
