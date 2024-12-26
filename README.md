@@ -93,7 +93,7 @@ See [Types](#types) section for further informations about.
 <summary>Example</summary>
 
 ```ts
-import Chain from '@alessiofrittoli/chain-functions'
+import { Chain } from '@alessiofrittoli/chain-functions'
 import type { ChainLink, LastChainLink, ChainFactory } from '@alessiofrittoli/chain-functions/types'
 
 type ChainFunction = () => string
@@ -221,7 +221,7 @@ Represents the complete chain of functions as an array.
 
 ```ts
 // importing the main `Chain` class
-import Chain from '@alessiofrittoli/chain-functions'
+import { Chain } from '@alessiofrittoli/chain-functions'
 // importing types
 import type { ChainLink, LastChainLink, ChainFactory } from '@alessiofrittoli/chain-functions/types'
 ```
@@ -378,7 +378,7 @@ console.log( await result ) // Outputs: '1-2-end'
 // src/middleware.ts
 
 import { NextMiddleware, NextResponse } from 'next/server'
-import Chain from '@alessiofrittoli/chain-functions'
+import { Chain } from '@alessiofrittoli/chain-functions'
 import type { ChainFactory, ChainLink, LastChainLink } from '@alessiofrittoli/chain-functions/types'
 
 type Middleware			= ChainLink<NextMiddleware>

@@ -3,7 +3,7 @@ import type { ChainFactory, ChainFunction, ChainLink, LastChainLink } from './ty
 /**
  * A utility class for managing and executing chains of functions.
  */
-class Chain
+export class Chain
 {
 	/**
 	 * Recursively executes a chain of functions, starting from the given index.
@@ -70,5 +70,3 @@ class Chain
 		return index === chain.length - 1
 	}
 }
-
-export default Chain
