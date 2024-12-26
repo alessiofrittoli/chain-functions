@@ -1,5 +1,5 @@
-import Chain from '@/index';
-import type { ChainFactory, ChainLink, LastChainLink } from '@/types';
+import { Chain } from '@/index'
+import type { ChainFactory, ChainLink, LastChainLink } from '@/types'
 
 type ChainFunction = () => string
 

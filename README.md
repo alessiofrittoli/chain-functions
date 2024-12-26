@@ -478,7 +478,7 @@ Run all the defined test suites by running the following:
 
 ```bash
 # Run tests and watch file changes.
-pnpm test
+pnpm test:watch
 
 # Run tests and watch file changes with jest-environment-jsdom.
 pnpm test:jsdom
@@ -504,7 +504,7 @@ An HTTP server is then started to serve coverage files from `./coverage` folder.
 ⚠️ You may see a blank page the first time you run this command. Simply refresh the browser to see the updates.
 
 ```bash
-pnpm test:coverage
+test:coverage:serve
 ```
 
 ---
