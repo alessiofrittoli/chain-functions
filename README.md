@@ -1,8 +1,19 @@
 # Chain Functions ⛓️
 
-Version 2.0.0
+[![NPM Latest Version][version-badge]][npm-url] [![Coverage Status][coverage-badge]][coverage-url] [![NPM Monthly Downloads][downloads-badge]][npm-url] [![Dependencies][deps-badge]][deps-url]
 
-[![Coverage Status](https://coveralls.io/repos/github/alessiofrittoli/chain-functions/badge.svg)](https://coveralls.io/github/alessiofrittoli/chain-functions) [![Dependencies](https://img.shields.io/librariesio/release/npm/%40alessiofrittoli%2Fchain-functions)](https://libraries.io/npm/%40alessiofrittoli%2Fchain-functions)
+[![GitHub Sponsor][sponsor-badge]][sponsor-url]
+
+[version-badge]: https://img.shields.io/npm/v/%40alessiofrittoli%2Fchain-functions
+[npm-url]: https://npmjs.org/package/%40alessiofrittoli%2Fchain-functions
+[coverage-badge]: https://coveralls.io/repos/github/alessiofrittoli/chain-functions/badge.svg
+[coverage-url]: https://coveralls.io/github/alessiofrittoli/chain-functions
+[downloads-badge]: https://img.shields.io/npm/dm/%40alessiofrittoli%2Fchain-functions.svg
+[deps-badge]: https://img.shields.io/librariesio/release/npm/%40alessiofrittoli%2Fchain-functions
+[deps-url]: https://libraries.io/npm/%40alessiofrittoli%2Fchain-functions
+
+[sponsor-badge]: https://img.shields.io/static/v1?label=Fund%20this%20package&message=%E2%9D%A4&logo=GitHub&color=%23DB61A2
+[sponsor-url]: https://github.com/sponsors/alessiofrittoli
 
 ## Functions chaining made easy
 
@@ -12,13 +23,13 @@ The `Chain` class provides a utility for managing and executing chains of functi
 
 - [Getting started](#getting-started)
 - [API Reference](#api-reference)
-	- [`Chain` class](#chain-class)
-	- [Types](#types)
+  - [`Chain` class](#chain-class)
+  - [Types](#types)
 - [Key Features](#key-features)
 - [Examples](#examples)
 - [Development](#development)
-	- [ESLint](#eslint)
-	- [Jest](#jest)
+  - [ESLint](#eslint)
+  - [Jest](#jest)
 - [Contributing](#contributing)
 - [Security](#security)
 - [Credits](#made-with-)
@@ -260,51 +271,51 @@ console.log( result ) // Output: '1-2-end'
 
 ```ts
 type ChainFunctionProps = {
-	someProperty	: string
-	firstFunction?	: boolean
-	secondFunction?	: boolean
-	thirdFunction?	: boolean
+    someProperty	: string
+    firstFunction?	: boolean
+    secondFunction?	: boolean
+    thirdFunction?	: boolean
 }
 // define the chain link function type
 type ChainFunction = ( props: ChainFunctionProps ) => ChainFunctionProps
 
 // declare chain link functions
 const function1: ChainLink<ChainFunction> = next => props => {
-	// edit properties
-	props.someProperty	= 'Edited by 1st function'
-	props.firstFunction	= true
-	// call the next function in the chain
-	return next( props )
+    // edit properties
+    props.someProperty	= 'Edited by 1st function'
+    props.firstFunction	= true
+    // call the next function in the chain
+    return next( props )
 }
 
 
 const function2: ChainLink<ChainFunction> = next => props => {
-	props.secondFunction = true
+    props.secondFunction = true
 
-	if ( props.someProperty === 'Edited by 1st function' ) {
-		// stop chain execution if some condition is met.
-		return props
-	}
-	
-	// call the next function in the chain
-	return next( props )
+    if ( props.someProperty === 'Edited by 1st function' ) {
+        // stop chain execution if some condition is met.
+        return props
+    }
+    
+    // call the next function in the chain
+    return next( props )
 }
 
 
 // declare the last chain function
 const function3: LastChainLink<ChainFunction> = () => props => {
-	props.thirdFunction = true
-	return props
+    props.thirdFunction = true
+    return props
 }
 
 // declare the chain array
 const chain: ChainFactory<ChainFunction> = [ function1, function2, function3 ]
 // declare the initial state
 const initialState: ChainFunctionProps = {
-	someProperty	: 'Initial value',
-	firstFunction	: false,
-	secondFunction	: false,
-	thirdFunction	: false,
+    someProperty	: 'Initial value',
+    firstFunction	: false,
+    secondFunction	: false,
+    thirdFunction	: false,
 }
 // execute the chain array with initial state
 const result = Chain.functions( chain )( initialState )
@@ -352,13 +363,13 @@ console.log( result ) // Outputs: '1-2-true'
 type ChainFunction = () => string | Promise<string>
 
 const function1: ChainLink<ChainFunction> = next => async () => {
-	// simulate a long task running
-	await new Promise<void>( resolve => setTimeout( resolve, 5000 ) )
-	return `1-${ next() }`
+    // simulate a long task running
+    await new Promise<void>( resolve => setTimeout( resolve, 5000 ) )
+    return `1-${ next() }`
 }
 const function2: ChainLink<ChainFunction> = next => (
-	// this function is executed once `function1` Promise get resolved.
-	() => `2-${ next() }`
+    // this function is executed once `function1` Promise get resolved.
+    () => `2-${ next() }`
 )
 const function3: LastChainLink<ChainFunction> = () => () => 'end'
 
@@ -388,34 +399,34 @@ type LastMiddleware		= () => NextResponse<unknown>
 type MiddlewareFactory	= ChainFactory<NextMiddleware, LastMiddleware>
 
 const middleware1: Middleware = next => (
-	async ( request, event ) => {
-		
-		const { nextUrl } = request
+    async ( request, event ) => {
+        
+        const { nextUrl } = request
 
-		if ( nextUrl === '...' ) {
-			const rewriteUrl = '...'
-			return (
-				NextResponse
-					.rewrite( rewriteUrl )
-			)
-		}
+        if ( nextUrl === '...' ) {
+            const rewriteUrl = '...'
+            return (
+                NextResponse
+                    .rewrite( rewriteUrl )
+            )
+        }
 
-		return next( request, event )
+        return next( request, event )
 
-	}
+    }
 )
 
 
 const middleware2: Middleware = next => (
-	async ( request, event ) => {
-		
-		const response = await next( request, event )
+    async ( request, event ) => {
+        
+        const response = await next( request, event )
 
-		// do something with `response` returned by the next middleware.
-		// ...
+        // do something with `response` returned by the next middleware.
+        // ...
 
-		return response
-	}
+        return response
+    }
 )
 
 // ensures `NextResponse.next()` is called if no one stops the chain.
@@ -424,16 +435,16 @@ const lastMiddleware: LastChainLink<LastMiddleware> = () => () => NextResponse.n
 const middlewares: MiddlewareFactory = [ middleware1, middleware2, lastMiddleware ]
 
 export const config = {
-	matcher: [
-		/**
-		 * Match all request paths except for the ones starting with:
-		 * - api (API routes)
-		 * - _next/static (static files)
-		 * - _next/image (image optimization files)
-		 * - favicon.ico (favicon file)
-		 */
-		'/((?!api/|_next|.*\\..*).*)',
-	]
+    matcher: [
+        /**
+         * Match all request paths except for the ones starting with:
+         * - api (API routes)
+         * - _next/static (static files)
+         * - _next/image (image optimization files)
+         * - favicon.ico (favicon file)
+         */
+        '/((?!api/|_next|.*\\..*).*)',
+    ]
 }
 
 // note that we do not execute the chain like in the previous examples since Next.js is responsible for the execution, providing `request` and `event` parameters to the `middleware` functions.
@@ -458,9 +469,9 @@ or using `pnpm`
 pnpm i
 ```
 
-#### Build your source code
+#### Build the source code
 
-Run the following command to build code for distribution.
+Run the following command to test and build code for distribution.
 
 ```bash
 pnpm build
@@ -494,6 +505,8 @@ pnpm test:ci:jsdom
 
 You can eventually run specific suits like so:
 
+- See [`package.json`](./package.json) file scripts for more info.
+
 ```bash
 pnpm test:jest
 pnpm test:jest:jsdom
@@ -513,8 +526,13 @@ test:coverage:serve
 
 ### Contributing
 
-Contributions are truly welcome!\
+Contributions are truly welcome!
+
 Please refer to the [Contributing Doc](./CONTRIBUTING.md) for more information on how to start contributing to this project.
+
+Help keep this project up to date with [GitHub Sponsor][sponsor-url].
+
+[![GitHub Sponsor][sponsor-badge]][sponsor-url]
 
 ---
 
@@ -525,30 +543,30 @@ If you believe you have found a security vulnerability, we encourage you to **_r
 ### Made with ☕
 
 <table style='display:flex;gap:20px;'>
-	<tbody>
-		<tr>
-			<td>
-				<img src='https://avatars.githubusercontent.com/u/35973186' style='width:60px;border-radius:50%;object-fit:contain;'>
-			</td>
-			<td>
-				<table style='display:flex;gap:2px;flex-direction:column;'>
-					<tbody>
-						<tr>
-							<td>
-								<a href='https://github.com/alessiofrittoli' target='_blank' rel='noopener'>Alessio Frittoli</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<small>
-									<a href='https://alessiofrittoli.it' target='_blank' rel='noopener'>https://alessiofrittoli.it</a> |
-									<a href='mailto:info@alessiofrittoli.it' target='_blank' rel='noopener'>info@alessiofrittoli.it</a>
-								</small>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</td>
-		</tr>
-	</tbody>
+  <tbody>
+    <tr>
+      <td>
+        <img alt="avatar" src='https://avatars.githubusercontent.com/u/35973186' style='width:60px;border-radius:50%;object-fit:contain;'>
+      </td>
+      <td>
+        <table style='display:flex;gap:2px;flex-direction:column;'>
+          <tbody>
+              <tr>
+                <td>
+                  <a href='https://github.com/alessiofrittoli' target='_blank' rel='noopener'>Alessio Frittoli</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <small>
+                    <a href='https://alessiofrittoli.it' target='_blank' rel='noopener'>https://alessiofrittoli.it</a> |
+                    <a href='mailto:info@alessiofrittoli.it' target='_blank' rel='noopener'>info@alessiofrittoli.it</a>
+                  </small>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
 </table>
