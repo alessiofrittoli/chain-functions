@@ -1,4 +1,5 @@
-onlyBuiltDependencies:
-  - '@alessiofrittoli/type-utils'
-  - esbuild
-  - unrs-resolver
+allowBuilds:
+  "@alessiofrittoli/fetcher": false
+  "@alessiofrittoli/type-utils": false
+minimumReleaseAgeExclude:
+  - "@alessiofrittoli/*"
