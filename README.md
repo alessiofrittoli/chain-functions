@@ -1,38 +1,65 @@
-# Chain Functions ⛓️
+<h1 align="center">Chain Functions ⛓️</h1>
+<h2 align="center">
+  Functions chaining made easy
+</h2>
+<p align="center">
+The <code>Chain</code> class provides a utility for managing and executing chains of functions. Each function in the chain can optionally invoke the next function, enabling a flexible and composable flow of execution. This is particularly useful for scenarios such as middleware processing, data transformations, or handling asynchronous operations in a structured manner.
+</p>
+<p align="center">
+  <a href="https://npmjs.org/package/@alessiofrittoli/chain-functions">
+    <img src="https://img.shields.io/npm/v/@alessiofrittoli/chain-functions" alt="Latest version"/>
+  </a>
+  <a href="https://coveralls.io/github/alessiofrittoli/node-scripts">
+    <img src="https://coveralls.io/repos/github/alessiofrittoli/node-scripts/badge.svg" alt="Test coverage"/>
+  </a>
+  <a href="https://socket.dev/npm/package/@alessiofrittoli/chain-functions/overview">
+    <img src="https://socket.dev/api/badge/npm/package/@alessiofrittoli/chain-functions" alt="Socket Security score"/>
+  </a>
+  <a href="https://npmjs.org/package/@alessiofrittoli/chain-functions">
+    <img src="https://img.shields.io/npm/dm/@alessiofrittoli/chain-functions.svg" alt="npm downloads"/>
+  </a>
+  <a href="https://bundlephobia.com/package/@alessiofrittoli/chain-functions">
+    <img src="https://badgen.net/bundlephobia/dependency-count/@alessiofrittoli/chain-functions" alt="Dependencies"/>
+  </a>
+  <a href="https://libraries.io/npm/%40alessiofrittoli%2Fnode-scripts">
+    <img src="https://img.shields.io/librariesio/release/npm/@alessiofrittoli/chain-functions" alt="Dependencies status"/>
+  </a>
+</p>
+<p align="center">
+  <a href="https://bundlephobia.com/package/@alessiofrittoli/chain-function">
+    <img src="https://badgen.net/bundlephobia/min/@alessiofrittoli/chain-function" alt="minified"/>
+  </a>
+  <a href="https://bundlephobia.com/package/@alessiofrittoli/chain-function">
+    <img src="https://badgen.net/bundlephobia/minzip/@alessiofrittoli/chain-function" alt="minizipped"/>
+  </a>
+  <a href="https://bundlephobia.com/package/@alessiofrittoli/chain-function">
+    <img src="https://badgen.net/bundlephobia/tree-shaking/@alessiofrittoli/chain-function" alt="Tree shakable"/>
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/sponsors/alessiofrittoli">
+    <img src="https://img.shields.io/static/v1?label=Fund%20this%20package&message=%E2%9D%A4&logo=GitHub&color=%23DB61A2" alt="Fund this package"/>
+  </a>
+</p>
 
-[![NPM Latest Version][version-badge]][npm-url] [![Coverage Status][coverage-badge]][coverage-url] [![Socket Status][socket-badge]][socket-url] [![NPM Monthly Downloads][downloads-badge]][npm-url] [![Dependencies][deps-badge]][deps-url]
-
-[![GitHub Sponsor][sponsor-badge]][sponsor-url]
-
-[version-badge]: https://img.shields.io/npm/v/%40alessiofrittoli%2Fchain-functions
-[npm-url]: https://npmjs.org/package/%40alessiofrittoli%2Fchain-functions
-[coverage-badge]: https://coveralls.io/repos/github/alessiofrittoli/chain-functions/badge.svg
-[coverage-url]: https://coveralls.io/github/alessiofrittoli/chain-functions
-[socket-badge]: https://socket.dev/api/badge/npm/package/@alessiofrittoli/chain-functions
-[socket-url]: https://socket.dev/npm/package/@alessiofrittoli/chain-functions/overview
-[downloads-badge]: https://img.shields.io/npm/dm/%40alessiofrittoli%2Fchain-functions.svg
-[deps-badge]: https://img.shields.io/librariesio/release/npm/%40alessiofrittoli%2Fchain-functions
-[deps-url]: https://libraries.io/npm/%40alessiofrittoli%2Fchain-functions
 [sponsor-badge]: https://img.shields.io/static/v1?label=Fund%20this%20package&message=%E2%9D%A4&logo=GitHub&color=%23DB61A2
 [sponsor-url]: https://github.com/sponsors/alessiofrittoli
-
-## Functions chaining made easy
-
-The `Chain` class provides a utility for managing and executing chains of functions. Each function in the chain can optionally invoke the next function, enabling a flexible and composable flow of execution. This is particularly useful for scenarios such as middleware processing, data transformations, or handling asynchronous operations in a structured manner.
 
 ### Table of Contents
 
 - [Getting started](#getting-started)
+- [Development](#development)
+  - [Local development](#local-development)
+  - [Production build](#production-build)
+  - [Unit tests](#unit-tests)
+    - [Run tests with coverage](#run-tests-with-coverage)
+  - [Contributing](#contributing)
+  - [Security](#security)
 - [API Reference](#api-reference)
   - [`Chain` class](#chain-class)
   - [Types](#types)
 - [Key Features](#key-features)
 - [Examples](#examples)
-- [Development](#development)
-  - [ESLint](#eslint)
-  - [Jest](#jest)
-- [Contributing](#contributing)
-- [Security](#security)
 - [Credits](#made-with-)
 
 ---
@@ -50,6 +77,84 @@ or using `pnpm`
 ```bash
 pnpm i @alessiofrittoli/chain-functions
 ```
+
+---
+
+### Development
+
+Run the following to start development
+
+```shell
+nvm use
+
+pnpm i
+```
+
+#### Local development
+
+Run the following
+
+```shell
+pnpm dev
+```
+
+This will generate unminified output code, sourcemaps and will enable source file watcher.
+
+---
+
+#### Production build
+
+Run the following to create a local production build
+
+```shell
+pnpm build
+```
+
+This will generate minified output code without sourcemaps.
+
+---
+
+#### Unit tests
+
+Run all the defined test suites by running the following:
+
+```shell
+# Run tests and watch file changes.
+pnpm test:watch
+
+# Run tests in a CI environment.
+pnpm test:ci
+```
+
+---
+
+##### Run tests with coverage
+
+An HTTP server is then started to serve coverage files from `./coverage` folder.
+
+⚠️ You may see a blank page the first time you run this command. Simply refresh the browser to see the updates.
+
+```shell
+pnpm test:coverage:serve
+```
+
+---
+
+#### Contributing
+
+Contributions are truly welcome!
+
+Please refer to the [Contributing Doc](./CONTRIBUTING.md) for more information on how to start contributing to this project.
+
+Help keep this project up to date with [GitHub Sponsor][sponsor-url].
+
+[![GitHub Sponsor][sponsor-badge]][sponsor-url]
+
+---
+
+#### Security
+
+If you believe you have found a security vulnerability, we encourage you to **_responsibly disclose this and NOT open a public issue_**. We will investigate all legitimate reports. Email `security@alessiofrittoli.it` to disclose any security vulnerabilities.
 
 ---
 
@@ -108,23 +213,19 @@ See [Types](#types) section for further informations about.
 <summary>Example</summary>
 
 ```ts
-import { Chain } from "@alessiofrittoli/chain-functions";
-import type {
-  ChainLink,
-  LastChainLink,
-  ChainFactory,
-} from "@alessiofrittoli/chain-functions/types";
+import type { ChainLink, LastChainLink, ChainFactory } from '@alessiofrittoli/chain-functions/types'
+import { Chain } from '@alessiofrittoli/chain-functions'
 
-type ChainFunction = () => string;
+type ChainFunction = () => string
 
-const function1: ChainLink<ChainFunction> = (next) => () => `1-${next()}`;
-const function2: ChainLink<ChainFunction> = (next) => () => `2-${next()}`;
-const function3: LastChainLink<ChainFunction> = () => () => "end";
+const function1: ChainLink<ChainFunction> = next => () => `1-${next()}`
+const function2: ChainLink<ChainFunction> = next => () => `2-${next()}`
+const function3: LastChainLink<ChainFunction> = () => () => 'end'
 
-const chain: ChainFactory<ChainFunction> = [function1, function2, function3];
-const result = Chain.functions(chain)();
+const chain: ChainFactory<ChainFunction> = [function1, function2, function3]
+const result = Chain.functions(chain)()
 
-console.log(result); // Output: '1-2-end'
+console.log(result) // Output: '1-2-end'
 ```
 
 </details>
@@ -240,13 +341,9 @@ Represents the complete chain of functions as an array.
 
 ```ts
 // importing the main `Chain` class
-import { Chain } from "@alessiofrittoli/chain-functions";
 // importing types
-import type {
-  ChainLink,
-  LastChainLink,
-  ChainFactory,
-} from "@alessiofrittoli/chain-functions/types";
+import type { ChainLink, LastChainLink, ChainFactory } from '@alessiofrittoli/chain-functions/types'
+import { Chain } from '@alessiofrittoli/chain-functions'
 ```
 
 <details>
@@ -255,20 +352,20 @@ import type {
 
 ```ts
 // define the chain link function type
-type ChainFunction = () => string;
+type ChainFunction = () => string
 
 // declare chain link functions
-const function1: ChainLink<ChainFunction> = (next) => () => `1-${next()}`;
-const function2: ChainLink<ChainFunction> = (next) => () => `2-${next()}`;
+const function1: ChainLink<ChainFunction> = next => () => `1-${next()}`
+const function2: ChainLink<ChainFunction> = next => () => `2-${next()}`
 // declare the last chain function
-const function3: LastChainLink<ChainFunction> = () => () => "end";
+const function3: LastChainLink<ChainFunction> = () => () => 'end'
 
 // declare the chain array
-const chain: ChainFactory<ChainFunction> = [function1, function2, function3];
+const chain: ChainFactory<ChainFunction> = [function1, function2, function3]
 // execute the chain array
-const result = Chain.functions(chain)();
+const result = Chain.functions(chain)()
 
-console.log(result); // Output: '1-2-end'
+console.log(result) // Output: '1-2-end'
 ```
 
 </details>
@@ -281,54 +378,54 @@ console.log(result); // Output: '1-2-end'
 
 ```ts
 type ChainFunctionProps = {
-  someProperty: string;
-  firstFunction?: boolean;
-  secondFunction?: boolean;
-  thirdFunction?: boolean;
-};
+  someProperty: string
+  firstFunction?: boolean
+  secondFunction?: boolean
+  thirdFunction?: boolean
+}
 // define the chain link function type
-type ChainFunction = (props: ChainFunctionProps) => ChainFunctionProps;
+type ChainFunction = (props: ChainFunctionProps) => ChainFunctionProps
 
 // declare chain link functions
-const function1: ChainLink<ChainFunction> = (next) => (props) => {
+const function1: ChainLink<ChainFunction> = next => props => {
   // edit properties
-  props.someProperty = "Edited by 1st function";
-  props.firstFunction = true;
+  props.someProperty = 'Edited by 1st function'
+  props.firstFunction = true
   // call the next function in the chain
-  return next(props);
-};
+  return next(props)
+}
 
-const function2: ChainLink<ChainFunction> = (next) => (props) => {
-  props.secondFunction = true;
+const function2: ChainLink<ChainFunction> = next => props => {
+  props.secondFunction = true
 
-  if (props.someProperty === "Edited by 1st function") {
+  if (props.someProperty === 'Edited by 1st function') {
     // stop chain execution if some condition is met.
-    return props;
+    return props
   }
 
   // call the next function in the chain
-  return next(props);
-};
+  return next(props)
+}
 
 // declare the last chain function
-const function3: LastChainLink<ChainFunction> = () => (props) => {
-  props.thirdFunction = true;
-  return props;
-};
+const function3: LastChainLink<ChainFunction> = () => props => {
+  props.thirdFunction = true
+  return props
+}
 
 // declare the chain array
-const chain: ChainFactory<ChainFunction> = [function1, function2, function3];
+const chain: ChainFactory<ChainFunction> = [function1, function2, function3]
 // declare the initial state
 const initialState: ChainFunctionProps = {
-  someProperty: "Initial value",
+  someProperty: 'Initial value',
   firstFunction: false,
   secondFunction: false,
   thirdFunction: false,
-};
+}
 // execute the chain array with initial state
-const result = Chain.functions(chain)(initialState);
+const result = Chain.functions(chain)(initialState)
 
-console.log(result);
+console.log(result)
 // Output: {
 //  someProperty    : 'Edited by 1st function',
 //  firstFunction   : true,
@@ -346,21 +443,17 @@ console.log(result);
 <summary>`LastChainLink` with custom return type</summary>
 
 ```ts
-type ChainFunction = () => string;
-type LastChainFunction = () => boolean;
+type ChainFunction = () => string
+type LastChainFunction = () => boolean
 
-const function1: ChainLink<ChainFunction> = (next) => () => `1-${next()}`;
-const function2: ChainLink<ChainFunction> = (next) => () => `2-${next()}`;
-const function3: LastChainLink<LastChainFunction> = () => () => true;
+const function1: ChainLink<ChainFunction> = next => () => `1-${next()}`
+const function2: ChainLink<ChainFunction> = next => () => `2-${next()}`
+const function3: LastChainLink<LastChainFunction> = () => () => true
 
-const chain: ChainFactory<ChainFunction, LastChainFunction> = [
-  function1,
-  function2,
-  function3,
-];
-const result = Chain.functions(chain)();
+const chain: ChainFactory<ChainFunction, LastChainFunction> = [function1, function2, function3]
+const result = Chain.functions(chain)()
 
-console.log(result); // Outputs: '1-2-true'
+console.log(result) // Outputs: '1-2-true'
 ```
 
 </details>
@@ -372,21 +465,21 @@ console.log(result); // Outputs: '1-2-true'
 <summary>`ChainLink` functions with promises</summary>
 
 ```ts
-type ChainFunction = () => string | Promise<string>;
+type ChainFunction = () => string | Promise<string>
 
-const function1: ChainLink<ChainFunction> = (next) => async () => {
+const function1: ChainLink<ChainFunction> = next => async () => {
   // simulate a long task running
-  await new Promise<void>((resolve) => setTimeout(resolve, 5000));
-  return `1-${next()}`;
-};
+  await new Promise<void>(resolve => setTimeout(resolve, 5000))
+  return `1-${next()}`
+}
 // this function is executed once `function1` Promise get resolved.
-const function2: ChainLink<ChainFunction> = (next) => () => `2-${next()}`;
-const function3: LastChainLink<ChainFunction> = () => () => "end";
+const function2: ChainLink<ChainFunction> = next => () => `2-${next()}`
+const function3: LastChainLink<ChainFunction> = () => () => 'end'
 
-const chain: ChainFactory<ChainFunction> = [function1, function2, function3];
-const result = Chain.functions(chain)(); // `result` is now a promise
+const chain: ChainFactory<ChainFunction> = [function1, function2, function3]
+const result = Chain.functions(chain)() // `result` is now a promise
 
-console.log(await result); // Outputs: '1-2-end'
+console.log(await result) // Outputs: '1-2-end'
 ```
 
 </details>
@@ -400,47 +493,38 @@ console.log(await result); // Outputs: '1-2-end'
 ```ts
 // src/middleware.ts
 
-import { NextMiddleware, NextResponse } from "next/server";
-import { Chain } from "@alessiofrittoli/chain-functions";
-import type {
-  ChainFactory,
-  ChainLink,
-  LastChainLink,
-} from "@alessiofrittoli/chain-functions/types";
+import type { ChainFactory, ChainLink, LastChainLink } from '@alessiofrittoli/chain-functions/types'
+import { NextMiddleware, NextResponse } from 'next/server'
+import { Chain } from '@alessiofrittoli/chain-functions'
 
-type Middleware = ChainLink<NextMiddleware>;
-type LastMiddleware = () => NextResponse<unknown>;
-type MiddlewareFactory = ChainFactory<NextMiddleware, LastMiddleware>;
+type Middleware = ChainLink<NextMiddleware>
+type LastMiddleware = () => NextResponse<unknown>
+type MiddlewareFactory = ChainFactory<NextMiddleware, LastMiddleware>
 
-const middleware1: Middleware = (next) => async (request, event) => {
-  const { nextUrl } = request;
+const middleware1: Middleware = next => async (request, event) => {
+  const { nextUrl } = request
 
-  if (nextUrl === "...") {
-    const rewriteUrl = "...";
-    return NextResponse.rewrite(rewriteUrl);
+  if (nextUrl === '...') {
+    const rewriteUrl = '...'
+    return NextResponse.rewrite(rewriteUrl)
   }
 
-  return next(request, event);
-};
+  return next(request, event)
+}
 
-const middleware2: Middleware = (next) => async (request, event) => {
-  const response = await next(request, event);
+const middleware2: Middleware = next => async (request, event) => {
+  const response = await next(request, event)
 
   // do something with `response` returned by the next middleware.
   // ...
 
-  return response;
-};
+  return response
+}
 
 // ensures `NextResponse.next()` is called if no one stops the chain.
-const lastMiddleware: LastChainLink<LastMiddleware> = () => () =>
-  NextResponse.next();
+const lastMiddleware: LastChainLink<LastMiddleware> = () => () => NextResponse.next()
 
-const middlewares: MiddlewareFactory = [
-  middleware1,
-  middleware2,
-  lastMiddleware,
-];
+const middlewares: MiddlewareFactory = [middleware1, middleware2, lastMiddleware]
 
 export const config = {
   matcher: [
@@ -451,89 +535,17 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      */
-    "/((?!api/|_next|.*\\..*).*)",
+    '/((?!api/|_next|.*\\..*).*)',
   ],
-};
+}
 
 // note that we do not execute the chain like in the previous examples since Next.js is responsible for the execution, providing `request` and `event` parameters to the `middleware` functions.
-export default Chain.functions(middlewares);
+export default Chain.functions(middlewares)
 ```
 
 </details>
 
 ---
-
-### Development
-
-#### Install depenendencies
-
-```bash
-npm install
-```
-
-or using `pnpm`
-
-```bash
-pnpm i
-```
-
-#### Build the source code
-
-Run the following command to test and build code for distribution.
-
-```bash
-pnpm build
-```
-
-#### [ESLint](https://www.npmjs.com/package/eslint)
-
-warnings / errors check.
-
-```bash
-pnpm lint
-```
-
-#### [Jest](https://npmjs.com/package/jest)
-
-Run all the defined test suites by running the following:
-
-```bash
-# Run tests and watch file changes.
-pnpm test:watch
-
-# Run tests in a CI environment.
-pnpm test:ci
-```
-
-- See [`package.json`](./package.json) file scripts for more info.
-
-Run tests with coverage.
-
-An HTTP server is then started to serve coverage files from `./coverage` folder.
-
-⚠️ You may see a blank page the first time you run this command. Simply refresh the browser to see the updates.
-
-```bash
-test:coverage:serve
-```
-
----
-
-### Contributing
-
-Contributions are truly welcome!
-
-Please refer to the [Contributing Doc](./CONTRIBUTING.md) for more information on how to start contributing to this project.
-
-Help keep this project up to date with [GitHub Sponsor][sponsor-url].
-
-[![GitHub Sponsor][sponsor-badge]][sponsor-url]
-
----
-
-### Security
-
-If you believe you have found a security vulnerability, we encourage you to **_responsibly disclose this and NOT open a public issue_**. We will investigate all legitimate reports. Email `security@alessiofrittoli.it` to disclose any security vulnerabilities.
 
 ### Made with ☕
 
