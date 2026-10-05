@@ -5,7 +5,7 @@
 		"titleBar.activeForeground": "#F0F0F0",
 		"statusBar.background": "#191919",
 		"statusBar.border": "#FBA53B",
-		"statusBar.foreground": "#A4A4A4",
+		"statusBar.foreground": "#F0F0F0",
 		"activityBar.activeBorder": "#FBA53B",
 		"activityBarBadge.foreground": "#212121",
 		"activityBarBadge.background": "#FBA53B"
