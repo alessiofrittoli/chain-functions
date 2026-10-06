@@ -9,10 +9,10 @@ importers:
   .:
     devDependencies:
       '@alessiofrittoli/node-scripts':
-        specifier: 4.0.0-alpha.3
+        specifier: ^4.0.0-alpha.3
         version: 4.0.0-alpha.3(@alessiofrittoli/abort-controller@0.1.0)(@alessiofrittoli/exception@3.5.0)(@alessiofrittoli/package-configs@1.6.0(oxlint@1.86.0)(prettier-plugin-sort-imports@1.8.11(typescript@6.0.3))(prettier@3.9.9)(tsdown@0.23.0(typescript@6.0.3))(typescript@6.0.3)(vite@8.3.2(@types/node@24.19.1))(vitest@5.0.3))(@alessiofrittoli/web-utils@2.3.0)
       '@alessiofrittoli/package-configs':
-        specifier: 1.6.0
+        specifier: ^1.6.0
         version: 1.6.0(oxlint@1.86.0)(prettier-plugin-sort-imports@1.8.11(typescript@6.0.3))(prettier@3.9.9)(tsdown@0.23.0(typescript@6.0.3))(typescript@6.0.3)(vite@8.3.2(@types/node@24.19.1))(vitest@5.0.3)
       '@types/node':
         specifier: ^24.19.1

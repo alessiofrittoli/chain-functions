@@ -84,8 +84,8 @@
 		"test:coverage:serve": "concurrently --prefix none --kill-others \"pnpm test:coverage\" \"pnpm test:serve-coverage\""
 	},
 	"devDependencies": {
-		"@alessiofrittoli/node-scripts": "4.0.0-alpha.3",
-		"@alessiofrittoli/package-configs": "1.6.0",
+		"@alessiofrittoli/node-scripts": "^4.0.0-alpha.3",
+		"@alessiofrittoli/package-configs": "^1.6.0",
 		"@types/node": "^24.19.1",
 		"@vitest/coverage-v8": "^5.0.3",
 		"concurrently": "^9.2.1",
