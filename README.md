@@ -9,8 +9,8 @@ The <code>Chain</code> class provides a utility for managing and executing chain
   <a href="https://npmjs.org/package/@alessiofrittoli/chain-functions">
     <img src="https://img.shields.io/npm/v/@alessiofrittoli/chain-functions" alt="Latest version"/>
   </a>
-  <a href="https://coveralls.io/github/alessiofrittoli/node-scripts">
-    <img src="https://coveralls.io/repos/github/alessiofrittoli/node-scripts/badge.svg" alt="Test coverage"/>
+  <a href="https://coveralls.io/github/alessiofrittoli/chain-functions">
+    <img src="https://coveralls.io/repos/github/alessiofrittoli/chain-functions/badge.svg" alt="Test coverage"/>
   </a>
   <a href="https://socket.dev/npm/package/@alessiofrittoli/chain-functions/overview">
     <img src="https://socket.dev/api/badge/npm/package/@alessiofrittoli/chain-functions" alt="Socket Security score"/>
@@ -21,7 +21,7 @@ The <code>Chain</code> class provides a utility for managing and executing chain
   <a href="https://bundlephobia.com/package/@alessiofrittoli/chain-functions">
     <img src="https://badgen.net/bundlephobia/dependency-count/@alessiofrittoli/chain-functions" alt="Dependencies"/>
   </a>
-  <a href="https://libraries.io/npm/%40alessiofrittoli%2Fnode-scripts">
+  <a href="https://libraries.io/npm/%40alessiofrittoli%2Fchain-functions">
     <img src="https://img.shields.io/librariesio/release/npm/@alessiofrittoli/chain-functions" alt="Dependencies status"/>
   </a>
 </p>
