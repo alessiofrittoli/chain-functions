@@ -21,7 +21,7 @@
 		"button.separator": "#212121",
 		// secondary buttons
 		"button.secondaryBackground": "#00000000",
-		"button.secondaryForeground": "#212121",
+		"button.secondaryForeground": "#F0F0F0",
 		"button.secondaryHoverBackground": "#FBA53B20"
 	},
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
