@@ -1,6 +1,6 @@
 {
 	"name": "@alessiofrittoli/chain-functions",
-	"version": "2.7.0",
+	"version": "2.8.0",
 	"description": "Functions chaining made easy",
 	"type": "module",
 	"author": {
@@ -66,7 +66,7 @@
 		"//1b": "******************** DEV - BUILD - LINT - RELEASE *******************",
 		"//1c": "*********************************************************************",
 		"dev": "tsdown --watch",
-		"build": "pnpm lint && pnpm tsc && pnpm tsdown",
+		"build": "pnpm lint && pnpm tsdown",
 		"lint": "oxlint --report-unused-disable-directives --max-warnings 0",
 		"release": "node scripts/release.ts --verbose --npm",
 		"//2a": "*********************************************************************",
